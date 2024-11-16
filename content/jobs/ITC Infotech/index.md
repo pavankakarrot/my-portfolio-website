@@ -1,10 +1,10 @@
 ---
 date: '2015-12-21'
-title: 'Creative Technologist Co-op'
-company: 'MullenLowe'
-location: 'Boston, MA'
-range: 'July - December 2015'
-url: 'https://us.mullenlowe.com/'
+title: 'Associative IT Consultant'
+company: 'ITC Infotech'
+location: 'Bangalore, India'
+range: 'Aug 2017 - Dec 2019'
+url: 'https://www.itcinfotech.com'
 ---
 
 - Developed, maintained, and shipped production code for client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery

@@ -135,30 +135,31 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hello! I'm Pavan, and I'm passionate about transforming data into actionable insights
+              that drive business decisions. My journey into data analytics began during my
+              Bachelor's in Electronics and Communication Engineering, where I discovered my love
+              for working with data through courses in Database Management and Artificial
+              Intelligence.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              Fast-forward to today, and I've had the privilege of wearing multiple hats - from
+              founding an e-commerce business{' '}
+              <a href="https://www.facebook.com/YavanGifts/">Yavan Gifts</a>, to working as an IT
+              consultant at
+              <a href="https://www.itcinfotech.com/">ITC Infotech</a>, , and now serving as a Data
+              Analyst at
+              <a href="https://westernhygiene.ie/">Western Hygiene</a>, and in Ireland. My
+              experience has taken me from the bustling tech scene in Bangalore to the vibrant city
+              of Galway, where I'm currently helping businesses make data-driven decision.
             </p>
 
             <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              What excites me most these days is developing comprehensive analytics solutions and
+              creating impactful visualizations that tell compelling stories through data. I
+              recently completed several significant projects, including a user behavior analysis
+              project that boosted conversion rates by 25% and implemented advanced sales
+              forecasting models using machine learning.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
