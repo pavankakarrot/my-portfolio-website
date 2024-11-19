@@ -26,6 +26,10 @@ module.exports = {
       url: '/#about',
     },
     {
+      name: 'Skills',
+      url: '/#skills',
+    },
+    {
       name: 'Experience',
       url: '/#jobs',
     },
@@ -40,9 +44,9 @@ module.exports = {
   ],
 
   colors: {
-    green: '#64ffda',
+    green: '#ff914d',
     navy: '#0a192f',
-    darkNavy: '#020c1b',
+    darkNavy: '#FBF8F3',
   },
 
   srConfig: (delay = 200, viewFactor = 0.25) => ({

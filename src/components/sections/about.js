@@ -18,34 +18,7 @@ const StyledAboutSection = styled.section`
     }
   }
 `;
-const StyledText = styled.div`
-  ul.skills-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
-    grid-gap: 0 10px;
-    padding: 0;
-    margin: 20px 0 0 0;
-    overflow: hidden;
-    list-style: none;
 
-    li {
-      position: relative;
-      margin-bottom: 10px;
-      padding-left: 20px;
-      font-family: var(--font-mono);
-      font-size: var(--fz-xs);
-
-      &:before {
-        content: '▹';
-        position: absolute;
-        left: 0;
-        color: var(--green);
-        font-size: var(--fz-sm);
-        line-height: 12px;
-      }
-    }
-  }
-`;
 const StyledPic = styled.div`
   position: relative;
   max-width: 300px;
@@ -125,50 +98,38 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
-
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
       <h2 className="numbered-heading">About Me</h2>
 
       <div className="inner">
-        <StyledText>
-          <div>
-            <p>
-              Hello! I'm Pavan, and I'm passionate about transforming data into actionable insights
-              that drive business decisions. My journey into data analytics began during my
-              Bachelor's in Electronics and Communication Engineering, where I discovered my love
-              for working with data through courses in Database Management and Artificial
-              Intelligence.
-            </p>
+        <div>
+          <p>
+            Hello! I'm Pavan, and I'm passionate about transforming data into actionable insights
+            that drive business decisions. My journey into data analytics began during my Bachelor's
+            in Electronics and Communication Engineering, where I discovered my love for working
+            with data through courses in Database Management and Artificial Intelligence.
+          </p>
 
-            <p>
-              Fast-forward to today, and I've had the privilege of wearing multiple hats - from
-              founding an e-commerce business{' '}
-              <a href="https://www.facebook.com/YavanGifts/">Yavan Gifts</a>, to working as an IT
-              consultant at
-              <a href="https://www.itcinfotech.com/">ITC Infotech</a>, , and now serving as a Data
-              Analyst at
-              <a href="https://westernhygiene.ie/">Western Hygiene</a>, and in Ireland. My
-              experience has taken me from the bustling tech scene in Bangalore to the vibrant city
-              of Galway, where I'm currently helping businesses make data-driven decision.
-            </p>
+          <p>
+            Fast-forward to today, and I've had the privilege of wearing multiple hats - from
+            founding an e-commerce business{' '}
+            <a href="https://www.facebook.com/YavanGifts/">Yavan Gifts</a>, to working as an IT
+            consultant at <a href="https://www.itcinfotech.com/">ITC Infotech</a>, and now serving
+            as a Data Analyst at <a href="https://westernhygiene.ie/">Western Hygiene</a> in
+            Ireland. My experience has taken me from the bustling tech scene in Bangalore to the
+            vibrant city of Galway, where I'm currently helping businesses make data-driven
+            decisions.
+          </p>
 
-            <p>
-              What excites me most these days is developing comprehensive analytics solutions and
-              creating impactful visualizations that tell compelling stories through data. I
-              recently completed several significant projects, including a user behavior analysis
-              project that boosted conversion rates by 25% and implemented advanced sales
-              forecasting models using machine learning.
-            </p>
-
-            <p>Here are a few technologies I’ve been working with recently:</p>
-          </div>
-
-          <ul className="skills-list">
-            {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
-          </ul>
-        </StyledText>
+          <p>
+            What excites me most these days is developing comprehensive analytics solutions and
+            creating impactful visualizations that tell compelling stories through data. I recently
+            completed several significant projects, including a user behavior analysis project that
+            boosted conversion rates by 25% and implemented advanced sales forecasting models using
+            machine learning.
+          </p>
+        </div>
 
         <StyledPic>
           <div className="wrapper">

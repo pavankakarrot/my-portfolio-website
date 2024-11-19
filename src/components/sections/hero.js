@@ -70,7 +70,7 @@ const Hero = () => {
         analytics and developing meaningful KPIs at{' '}
         <a href="https://westernhygiene.ie/" target="_blank" rel="noreferrer">
           Western Hygiene
-        </a>
+        </a>{' '}
         in Galway, Ireland.
       </p>
     </>
@@ -78,10 +78,9 @@ const Hero = () => {
   const five = (
     <a
       className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
+      href="https://www.linkedin.com/in/pavan-tummalapenta"
       target="_blank"
-      rel="noreferrer"
-    >
+      rel="noreferrer">
       Leave a message!
     </a>
   );
