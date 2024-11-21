@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@components/*": ["src/components/*"],
+        "@config/*": ["src/config/*"],
+        "@fonts/*": ["src/fonts/*"],
+        "@hooks/*": ["src/hooks/*"],
+        "@images/*": ["src/images/*"],
+        "@pages/*": ["src/pages/*"],
+        "@styles/*": ["src/styles/*"],
+        "@utils/*": ["src/utils/*"]
+      },
+      "jsx": "react"
+    },
+    "exclude": ["node_modules", "public", ".cache"]
+  }

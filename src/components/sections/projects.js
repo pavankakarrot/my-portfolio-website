@@ -1,6 +1,6 @@
+/** @jsx React.createElement */
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
@@ -11,6 +11,10 @@ const StyledProjectsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1200px; // Add this to control overall width
+  margin: 0 auto; // Center the section
+
+
 
   h2 {
     font-size: clamp(24px, 5vw, var(--fz-heading));
@@ -27,14 +31,21 @@ const StyledProjectsSection = styled.section`
   .projects-grid {
     ${({ theme }) => theme.mixins.resetList};
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 15px;
     position: relative;
     margin-top: 50px;
+    width: 100%; // Ensure full width
+    padding: 0 20px; // Add padding for smaller screens
 
     @media (max-width: 1080px) {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(2, 1fr); // 2 columns on medium screens
     }
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr; // 1 column on mobile
+    }
+  }
   }
 
   .more-button {
@@ -57,11 +68,6 @@ const StyledProject = styled.li`
     }
   }
 
-  a {
-    position: relative;
-    z-index: 1;
-  }
-
   .project-inner {
     ${({ theme }) => theme.mixins.boxShadow};
     ${({ theme }) => theme.mixins.flexBetween};
@@ -73,12 +79,13 @@ const StyledProject = styled.li`
     border-radius: var(--border-radius);
     background-color: var(--light-navy);
     transition: var(--transition);
-    overflow: auto;
+    overflow: hidden;
   }
 
   .project-top {
     ${({ theme }) => theme.mixins.flexBetween};
-    margin-bottom: 35px;
+    margin-bottom: 30px;
+    width: 100%;
 
     .folder {
       color: var(--green);
@@ -137,10 +144,32 @@ const StyledProject = styled.li`
 
   .project-description {
     color: var(--light-slate);
-    font-size: 17px;
+    font-size: var(--fz-md);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: auto;
+    max-height: 75px;
+    margin-bottom: 15px;
 
     a {
       ${({ theme }) => theme.mixins.inlineLink};
+    }
+
+    & > *:not(:first-child) {
+      display: none;
+    }
+
+    & > p:first-child {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
   }
 
@@ -157,6 +186,7 @@ const StyledProject = styled.li`
       font-family: var(--font-mono);
       font-size: var(--fz-xxs);
       line-height: 1.75;
+      color: var(--light-slate);
 
       &:not(:last-of-type) {
         margin-right: 15px;
@@ -167,13 +197,13 @@ const StyledProject = styled.li`
 
 const Projects = () => {
   const data = useStaticQuery(graphql`
-    query {
+    query ProjectsQuery {
       projects: allMarkdownRemark(
         filter: {
           fileAbsolutePath: { regex: "/content/projects/" }
-          frontmatter: { showInProjects: { ne: false } }
+          frontmatter: { showInProjects: { eq: true } }
         }
-        sort: { fields: [frontmatter___date], order: DESC }
+        sort: { frontmatter: { date: DESC } }
       ) {
         edges {
           node {
@@ -182,6 +212,7 @@ const Projects = () => {
               tech
               github
               external
+              slug
             }
             html
           }
@@ -200,106 +231,74 @@ const Projects = () => {
     if (prefersReducedMotion) {
       return;
     }
-
     sr.reveal(revealTitle.current, srConfig());
     sr.reveal(revealArchiveLink.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
-  }, []);
+  }, [prefersReducedMotion]);
 
   const GRID_LIMIT = 6;
-  const projects = data.projects.edges.filter(({ node }) => node);
+  const projects = data.projects.edges;
   const firstSix = projects.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? projects : firstSix;
 
-  const projectInner = node => {
-    const { frontmatter, html } = node;
-    const { github, external, title, tech } = frontmatter;
-
-    return (
-      <div className="project-inner">
-        <header>
-          <div className="project-top">
-            <div className="folder">
-              <Icon name="Folder" />
-            </div>
-            <div className="project-links">
-              {github && (
-                <a href={github} aria-label="GitHub Link" target="_blank" rel="noreferrer">
-                  <Icon name="GitHub" />
-                </a>
-              )}
-              {external && (
-                <a
-                  href={external}
-                  aria-label="External Link"
-                  className="external"
-                  target="_blank"
-                  rel="noreferrer">
-                  <Icon name="External" />
-                </a>
-              )}
-            </div>
-          </div>
-
-          <h3 className="project-title">
-            <a href={external} target="_blank" rel="noreferrer">
-              {title}
-            </a>
-          </h3>
-
-          <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
-        </header>
-
-        <footer>
-          {tech && (
-            <ul className="project-tech-list">
-              {tech.map((tech, i) => (
-                <li key={i}>{tech}</li>
-              ))}
-            </ul>
-          )}
-        </footer>
-      </div>
-    );
-  };
-
   return (
     <StyledProjectsSection>
-      <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
-
+      <h2 className="numbered-heading overline">My Top Projects</h2>
+      
       <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
         view the archive
       </Link>
 
       <ul className="projects-grid">
-        {prefersReducedMotion ? (
-          <>
-            {projectsToShow &&
-              projectsToShow.map(({ node }, i) => (
-                <StyledProject key={i}>{projectInner(node)}</StyledProject>
-              ))}
-          </>
-        ) : (
-          <TransitionGroup component={null}>
-            {projectsToShow &&
-              projectsToShow.map(({ node }, i) => (
-                <CSSTransition
-                  key={i}
-                  classNames="fadeup"
-                  timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
-                  exit={false}>
-                  <StyledProject
-                    key={i}
-                    ref={el => (revealProjects.current[i] = el)}
-                    style={{
-                      transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
-                    }}>
-                    {projectInner(node)}
-                  </StyledProject>
-                </CSSTransition>
-              ))}
-          </TransitionGroup>
-        )}
+        {projectsToShow.map(({ node }, i) => {
+          const { frontmatter, html } = node;
+          const { github, external, title, tech, slug } = frontmatter;
+
+          const description = html.split('</p>')[0] + '</p>';
+          
+          return (
+            <StyledProject
+              key={i}
+              ref={el => (revealProjects.current[i] = el)}
+              style={{
+                transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
+              }}>
+              <div className="project-inner">
+                <div className="project-top">
+                  <div className="folder">
+                    <Icon name="Folder" />
+                  </div>
+                  <div className="project-links">
+                    {github && (
+                      <a href={github} aria-label="GitHub Link" target="_blank" rel="noreferrer">
+                        <Icon name="GitHub" />
+                      </a>
+                    )}
+                    {external && (
+                      <a href={external} aria-label="External Link" className="external" target="_blank" rel="noreferrer">
+                        <Icon name="External" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                <h3 className="project-title">
+                  <Link to={slug}>{title}</Link>
+                </h3>
+
+                <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
+
+                {tech && (
+                  <ul className="project-tech-list">
+                    {tech.map((tech, i) => (
+                      <li key={i}>{tech}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </StyledProject>
+          );
+        })}
       </ul>
 
       <button className="more-button" onClick={() => setShowMore(!showMore)}>
