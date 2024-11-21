@@ -11,13 +11,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         filter: { 
           fileAbsolutePath: { regex: "/projects/[^/]+/index/i" }
         }
-        sort: { frontmatter: { date: DESC } }
+        sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
           node {
             frontmatter {
               slug
               title
+              date
             }
             fileAbsolutePath
           }

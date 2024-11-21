@@ -203,7 +203,7 @@ const Projects = () => {
           fileAbsolutePath: { regex: "/content/projects/" }
           frontmatter: { showInProjects: { eq: true } }
         }
-        sort: { frontmatter: { date: DESC } }
+        sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
           node {
@@ -286,7 +286,7 @@ const Projects = () => {
                   <Link to={slug}>{title}</Link>
                 </h3>
 
-                <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
+                <div className="project-description" dangerouslySetInnerHTML={{ __html: node.html }} />
 
                 {tech && (
                   <ul className="project-tech-list">
