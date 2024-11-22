@@ -1,5 +1,5 @@
 ---
-date: '2023-09'
+date: '2022-10-10'
 title: 'WooCommerce Analytics'
 cover: './image.png'
 github: 'https://github.com/pavankakarrot/woocommerce'
@@ -11,7 +11,7 @@ tech:
 slug: '/projects/woocommerce'
 showInProjects: true
 ---
-I have done googke aanlysis.
+Built a multi-channel e-commerce store, boosting revenue by 25% and cutting cart abandonment by 15%.
 
 
 

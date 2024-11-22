@@ -1,5 +1,5 @@
 ---
-date: '2023-08'
+date: '2019-01-01'
 title: 'UAT Automation Framework'
 cover: './image.png'
 github: 'https://github.com/pavankakarrot/uat'
@@ -12,7 +12,7 @@ slug: '/projects/uat'
 showInProjects: true
 ---
 
-I have done googke aanlysis.
+Revamped trading commission structures, achieving compliance and optimizing $5M portfolio profitability.
 
 
 

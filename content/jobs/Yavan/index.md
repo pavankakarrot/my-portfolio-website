@@ -7,4 +7,4 @@ range: 'Dec 2019 - Aug 2020'
 url: 'https://www.facebook.com/yavangifts'
 ---
 
-- Launched and scaled a personalised gifting e-commerce business, expanding product category and overseeing daily operations of order processing
+- Built and scaled a Shopify e-commerce store from scratch, achieving €2,500 in revenue through targeted campaigns, data-driven insights, and fulfillment optimization for 150+ personalized orders.

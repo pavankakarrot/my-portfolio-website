@@ -1,5 +1,5 @@
 ---
-date: '2023-12'
+date: '2024-09-09'
 title: 'Python Data Analytics'
 cover: './image.png'
 github: 'https://github.com/pavankakarrot/python-analytics'
@@ -12,7 +12,7 @@ slug: '/projects/python-analytics'
 showInProjects: true
 ---
 
-I have done googke aanlysis.
+Explore advanced Python techniques to analyze e-commerce retail data, focusing on customer behavior, inventory optimization, and actionable business insights through data exploration, cleaning, and feature engineering.
 
 
 

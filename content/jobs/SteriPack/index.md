@@ -7,4 +7,4 @@ range: 'Jan 2021 - July 2021'
 url: 'https://steripack.com/'
 ---
 
-- e-commerce Ads Specialist
+- Performed marketing analysis & assisted in maintaining digital platforms 

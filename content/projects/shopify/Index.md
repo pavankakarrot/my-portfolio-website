@@ -1,5 +1,5 @@
 ---
-date: '2023-10'
+date: '2020-01-01'
 title: 'Shopify Analytics Integration'
 cover: './image.png'
 github: 'https://github.com/pavankakarrot/shopify'
@@ -12,7 +12,7 @@ slug: '/projects/shopify'
 showInProjects: true
 ---
 
-I have done googke aanlysis.
+Launched a Shopify store generating €2,500 in 6 months, delivering 150+ orders with 95% efficiency.
 
 
 

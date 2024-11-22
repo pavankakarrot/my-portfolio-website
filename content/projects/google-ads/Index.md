@@ -11,7 +11,7 @@ tech:
 slug: '/projects/google-ads'
 showInProjects: true
 ---
-I have done googke aanlysis.
+Google Ads analysis with BigQuery and Power BI. Dive into actionable insights, optimize ad spend, and create dashboards that turn data into decisions. See how to deliver high ROI campaigns and impress stakeholders with your data-driven strategy.
 
 
 

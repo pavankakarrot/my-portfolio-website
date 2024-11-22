@@ -145,70 +145,135 @@ const Skills = () => {
   }, []);
 
   const skillData = {
-    'Analytics & Visualization': [
-      {
-        name: 'Power BI',
-        level: 90,
-        subSkills: [
-          { name: 'DAX', level: 85 },
-          { name: 'Power Query', level: 80 },
-        ],
-      },
-      {
-        name: 'Tableau',
-        level: 85,
-      },
+    'Data Visualization': [
+        {
+            name: 'Power BI',
+            level: 90,
+        },
+        {
+            name: 'Tableau',
+            level: 80,
+        },
+        {
+            name: 'Advanced Excel',
+            level: 85,
+        },
+        {
+            name: 'PowerPoint',
+            level: 85,
+        },
+        {
+            name: 'Looker',
+            level: 80,
+        },
+        {
+            name: 'Google Analytics (GA4)',
+            level: 80,
+        }
     ],
-    Programming: [
-      {
-        name: 'Python',
-        level: 80,
-        subSkills: [
-          { name: 'Pandas', level: 85 },
-          { name: 'Numpy', level: 75 },
-          { name: 'Seaborn', level: 70 },
-        ],
-      },
-      {
-        name: 'SQL',
-        level: 90,
-      },
+    'Programming & Databases': [
+        {
+            name: 'SQL',
+            level: 85,
+        },
+        {
+            name: 'Python',
+            level: 80,
+        },
+        {
+            name: 'Pandas & Numpy',
+            level: 85,
+        },
+        {
+            name: 'Seaborn & Matplotlib',
+            level: 80,
+        },
+        {
+            name: 'Scikit-learn',
+            level: 75,
+        },
+        {
+            name: 'Power Query',
+            level: 80,
+        }
     ],
-    'Analysis Methods': [
-      {
-        name: 'Attribution Modeling',
-        level: 85,
-      },
-      {
-        name: 'Regression Analysis',
-        level: 80,
-      },
-      {
-        name: 'Forecasting',
-        level: 75,
-      },
+    'Data Management': [
+        {
+            name: 'Data Cleaning & Preprocessing',
+            level: 85,
+        },
+        {
+            name: 'ETL Processes',
+            level: 80,
+        },
+        {
+            name: 'Data Modeling',
+            level: 80,
+        }
+    ],
+    'Statistical Analysis': [
+        {
+            name: 'Descriptive Statistics',
+            level: 85,
+        },
+        {
+            name: 'Inferential Statistics',
+            level: 80,
+        },
+        {
+            name: 'Regression Analysis',
+            level: 85,
+        },
+        {
+            name: 'Time Series Analysis',
+            level: 80,
+        }
     ],
     'Business Tools': [
-      {
-        name: 'WordPress',
-        level: 85,
-      },
-      {
-        name: 'Dynamics 365',
-        level: 80,
-      },
+        {
+            name: 'Microsoft Stack',
+            level: 85,
+        },
+        {
+            name: 'Github',
+            level: 80,
+        },
+        {
+            name: 'Shopify',
+            level: 80,
+        },
+        {
+            name: 'WordPress',
+            level: 80,
+        },
+        {
+            name: 'Google Cloud',
+            level: 75,
+        }
     ],
     'Soft Skills': [
-      {
-        name: 'Problem-Solving',
-        level: 90,
-      },
-      {
-        name: 'Stakeholder Communication',
-        level: 85,
-      },
-    ],
-  };
+        {
+            name: 'Problem-Solving',
+            level: 90,
+        },
+        {
+            name: 'Stakeholder Communication',
+            level: 85,
+        },
+        {
+            name: 'Teamwork',
+            level: 90,
+        },
+        {
+            name: 'Attention to Detail',
+            level: 85,
+        },
+        {
+            name: 'Executive Presentations',
+            level: 85,
+        }
+    ]
+};
 
   return (
     <StyledSkillsSection id="skills" ref={revealContainer}>

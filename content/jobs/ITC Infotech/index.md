@@ -7,4 +7,4 @@ range: 'Aug 2017 - Dec 2019'
 url: 'https://www.itcinfotech.com'
 ---
 
-- Assisted in project delivery of commisions chnage request of margin trading for different customer profiles, performed UAT Testing
+- Conducted UAT testing and implementing margin trading commission changes that enhanced operational accuracy for 10,000+ client accounts.

@@ -7,4 +7,4 @@ range: 'Sep 2021 - Dec 2022'
 url: 'https://www.westernhygiene.ie'
 ---
 
-- overviewed the project development of e-commerce website
+- Designed and launched a dynamic WooCommerce platform handling 500+ SKUs, leveraging WordPress and automation tools to optimize product management, order processing, and sales analytics
