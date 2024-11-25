@@ -106,30 +106,33 @@ const About = () => {
       <div className="inner">
         <div>
           <p>
-            Hello! I'm Pavan, and I'm passionate about transforming data into actionable insights
-            that drive business decisions. My journey into data analytics began during my Bachelor's
-            in Electronics and Communication Engineering, where I discovered my love for working
-            with data through courses in Database Management and Artificial Intelligence.
+            Hello! I'm Pavan, a data enthusiast with a unique journey from electronics engineering to 
+            data analytics. My passion lies in transforming complex data into actionable insights 
+            that drive business growth.
           </p>
 
           <p>
-            Fast-forward to today, and I've had the privilege of wearing multiple hats - from
-            founding an e-commerce business{' '}
-            <a href="https://www.facebook.com/YavanGifts/">Yavan Gifts</a>, to working as an IT
-            consultant at <a href="https://www.itcinfotech.com/">ITC Infotech</a>, and now serving
-            as a Data Analyst at <a href="https://westernhygiene.ie/">Western Hygiene</a> in
-            Ireland. My experience has taken me from the bustling tech scene in Bangalore to the
-            vibrant city of Galway, where I'm currently helping businesses make data-driven
-            decisions.
+            My career path has been diverse and enriching - from founding{' '}
+            <a href="https://www.facebook.com/YavanGifts/" target="_blank" rel="noreferrer">
+              Yavan Gifts
+            </a>{' '}
+            (an e-commerce venture), to engineering solutions at{' '}
+            <a href="https://www.itcinfotech.com/" target="_blank" rel="noreferrer">
+              ITC Infotech
+            </a>
+            . Currently based in Galway, Ireland, I'm focused on leveraging data to drive business 
+            decisions and create meaningful impact.
           </p>
 
           <p>
-            What excites me most these days is developing comprehensive analytics solutions and
-            creating impactful visualizations that tell compelling stories through data. I recently
-            completed several significant projects, including a user behavior analysis project that
-            boosted conversion rates by 25% and implemented advanced sales forecasting models using
-            machine learning.
+            Recent achievements include:
           </p>
+
+          <ul className="achievements-list">
+            <li>Boosted e-commerce conversion rates by 25% through advanced user behavior analysis</li>
+            <li>Implemented ML-powered sales forecasting models for improved inventory management</li>
+            <li>Developed interactive dashboards that transform complex data into actionable insights</li>
+          </ul>
         </div>
 
         <StyledPic>
