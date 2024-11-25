@@ -59,23 +59,28 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Pavan Tummalapenta.</h2>;
-  const three = <h3 className="big-heading">I turn data into money</h3>;
+  const one = <h4>Hi, my name is</h4>;
+  const two = <h3 className="big-heading">Pavan Tummalapenta.</h3>;
+  const three = <h4 className="big-heading">Data Analytics Strategist</h4>;
   const four = (
-    <>
-      <p>
-        I'm a data analyst specializing in transforming complex datasets into actionable insights
-        and creating data-driven experiences. Currently, I'm focused on enhancing e-commerce
-        analytics and developing meaningful KPIs at{' '}
-        <a href="https://westernhygiene.ie/" target="_blank" rel="noreferrer">
-          Western Hygiene
-        </a>{' '}
-        in Galway, Ireland.
-      </p>
-    </>
+    <p>
+      Transforming raw data into revenue-driving insights, I specialize in building analytical frameworks that power business decisions. 
+      As an e-commerce analytics specialist, I develop custom KPIs and performance metrics that translate complex data into measurable business growth.
+    </p>
   );
   const five = (
+    <div className="specializations">
+      <h4>Specializing in:</h4>
+      <ul>
+        <li>Data Visualization & Dashboard Development</li>
+        <li>E-commerce Analytics & User Behavior Analysis</li>
+        <li>Predictive Modeling & Machine Learning</li>
+        <li>KPI Development & Performance Metrics</li>
+        <li>Business Intelligence & Strategic Analysis</li>
+      </ul>
+    </div>
+  );
+  const six = (
     <a
       className="email-link"
       href="https://www.linkedin.com/in/pavan-tummalapenta"
@@ -84,7 +89,6 @@ const Hero = () => {
       Leave a message!
     </a>
   );
-
   const items = [one, two, three, four, five];
 
   return (
