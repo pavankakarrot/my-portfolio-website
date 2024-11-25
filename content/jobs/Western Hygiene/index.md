@@ -7,4 +7,5 @@ range: 'Sep 2021 - Dec 2022'
 url: 'https://www.westernhygiene.ie'
 ---
 
-- Designed and launched a dynamic WooCommerce platform handling 500+ SKUs, leveraging WordPress and automation tools to optimize product management, order processing, and sales analytics
+- Created a WooCommerce platform managing 500+ SKUs, processed 100K+ users interactions, generating €200k sales
+- Monthly web performance reports to key stakeholders, leading to data-driven recommendations that optimized the sales funnel and improved conversion rates by 15%
