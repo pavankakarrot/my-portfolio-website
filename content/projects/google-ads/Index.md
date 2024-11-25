@@ -1,6 +1,6 @@
 ---
 date: '2024-01-01'
-title: 'Google Ads Analytics Dashboard'
+title: 'Google Ads: Actionable Insights with Big Query & Power BI'
 cover: './image.png'
 github: 'https://github.com/pavankakarrot/google-ads'
 tech:
@@ -22,26 +22,27 @@ _Because who doesn't love making sense of advertising data? Right?_ 😉
 
 ## Table of Contents
 
-1. [Project Conversion Starter](#project-conversion-starter)
-2. [Business Requirement Documentation](#business-requirement-documentation)
-3. [Data Collection](#data-collection)
-4. [Data Quality Assessment & Completeness](#data-quality-assessment--completeness)  
-   4.1. [Record Count Analysis](#record-count-analysis)  
-   4.2. [Missing Values](#missing-values)  
-   4.3. [Data Metric Range](#data-metric-range)  
-   4.4. [Outlier Detection](#outlier-detection)  
-   4.5. [Relationship Integrity Between Tables](#relationship-integrity-between-tables)
-5. [Data Model Design: Facts & Dimension Tables](#data-model-design-facts--dimension-tables)
-6. [Data Processing & Cleaning](#data-processing--cleaning)
-7. [Data Enhancement: Metrics & KPI Development](#data-enhancement-metrics--kpi-development)
-8. [Analysis & Reporting](#analysis--reporting)
-9. [Power BI Dashboard](#power-bi-dashboard)
+1. [Project Conversion Starter](#1-project-conversation-starter)
+2. [Business Requirement Documentation](#2-business-requirement-documentation)
+3. [Data Collection](#3-data-collection)
+4. [Data Quality Assessment & Completeness](#4-data-quality-assessment--completeness)  
+   4.1. [Record Count Analysis](#41-record-count-analysis)  
+   4.2. [Missing Values](#42-handling-missing-vaules)  
+   4.3. [Data Metric Range](#43-metric-range-analysis)  
+   4.4. [Outlier Detection](#44-outlier-detection)  
+   4.5. [Relationship Integrity Between Tables](#45-relationship-integrity-between-tables)
+5. [Data Model Design: Facts & Dimension Tables](#5-data-model-design-facts--dimension-tables)
+6. [Data Processing & Cleaning](#6-data-processing--cleaning)
+7. [Data Enhancement: Metrics & KPI Development](#7-data-enhancement-metrics--kpi-development)
+8. [Analysis & Reporting](#8-analysis--reportingcoming-soon)
+9. [Power BI Dashboard](#9-power-bi-dashboardcoming-soon)
 
 <br>
 <br>
 <br>
+<br>
 
-## Project Conversation Starter
+## 1. Project Conversation Starter
 
 <div align="left">
 
@@ -74,10 +75,10 @@ _Because who doesn't love making sense of advertising data? Right?_ 😉
 
 <br>
 <br>
----
+<br>
 <br>
 
-## Business Requirement Documentation
+## 2. Business Requirement Documentation
 
 #### Objective
 
@@ -114,10 +115,10 @@ graph TD
 
 <br>
 <br>
----
+<br>
 <br>
 
-## Data Collection
+## 3. Data Collection
 
 Before we dive into making those fancy charts, let's make sure our data isn't playing tricks on us. Think of this as a health check-up for our data - but don't worry, no needles involved!
 
@@ -135,12 +136,12 @@ Our Tables:
 
 <br>
 <br>
----
+<br>
 <br>
 
-## Data Quality Assessment & Completeness
+## 4. Data Quality Assessment & Completeness
 
-### Record Count Analysis
+### 4.1 Record Count Analysis
 
 ```sql
 -- Check daily record counts to identify missing dates or unusual patterns
@@ -180,7 +181,7 @@ ORDER BY segments_date DESC;
 <br>
 <br>
 
-### Missing Vaules
+### 4.2 Handling Missing Vaules
 
 ```missing value analysis
 -- Check null percentages for critical fields
@@ -220,7 +221,7 @@ FROM field_stats;
   <br>
   <br>
 
-### Metric Range Analysis
+### 4.3 Metric Range Analysis
 
 ```
 -- Check for unusual metric values
@@ -269,7 +270,7 @@ FROM metric_stats;
 <br>
 <br>
 
-### Outlier Detection
+### 4.4 Outlier Detection
 
 ```
 -- Identify potential outliers using z-score method
@@ -325,7 +326,7 @@ ORDER BY segments_date DESC;
 <br>
 <br>
 
-### Relationship Integrity Between Tables
+### 4.5 Relationship Integrity Between Tables
 
 ```
 -- Check relationship integrity between tables
@@ -376,8 +377,10 @@ CROSS JOIN landing_page_keys l;
 
 <br>
 <br>
+<br>
+<br>
 
-## Data Model Design: Facts & Dimension Tables
+## 5. Data Model Design: Facts & Dimension Tables
 
 #### Table Relationships Diagram
 
@@ -396,7 +399,7 @@ graph TD
 <br>
 <br>
 
-### Create Base Tables (Facts & Dimensions)
+### 5.1 Create Base Tables (Facts & Dimensions)
 
 We create facts & dimension tables to make complex data dimple to understand, speeds up report generation, & to make ensure data consistency.
 
@@ -406,26 +409,11 @@ We create facts & dimension tables to make complex data dimple to understand, sp
 
 Combination of both tables enables efficient and flexible analysis and reporting.
 
-```mermaid
-graph TD;
-    A[Campaign Stats] --> B[Daily performance metrics];
-    A --> C[Click and impression data];
-    A --> D[Cost information (Euros)];
-    A --> E[Device breakdowns];
-
-    F[Demographics] --> G[Gender insights];
-    F --> H[Age range distributions];
-    F --> I[Campaign targeting information];
-
-    J[Landing Pages] --> K[URL tracking];
-    J --> L[Domain analysis];
-    J --> M[Path information];
-```
 
 <br>
 <br>
 
-#### Temporary Campaign Stats Fact Table
+### 5.2 Temporary Campaign Stats Fact Table
 
 ```sql
 -- 1. Create temporary campaign stats table with Euro conversion
@@ -451,7 +439,7 @@ WHERE segments_date >= analysis_start_date;
 <br>
 <br>
 
-#### Demographics Dimesion Table
+### 5.3 Demographics Dimesion Table
 
 ```sql
 -- 2. Create temporary demographics table (unchanged)
@@ -470,7 +458,7 @@ FULL OUTER JOIN `ga4powerbi-2024.GoogleAds.p_ads_AgeRange_5917066896` d2
 <br>
 <br>
 
-#### Landing Page Dimesion Table
+### 5.4 Landing Page Dimesion Table
 
 ```sql
 -- 3. Create temporary landing pages table (unchanged)
@@ -486,14 +474,13 @@ FROM `ga4powerbi-2024.GoogleAds.p_ads_LandingPageStats_5917066896`;
 <br>
 <br>
 <br>
+<br>
 
-## Data Processing & Cleaning
+## 6. Data Processing & Cleaning
 
 Ensure data integrity through validation by checking for completeness, verifying metric accuracy, and maintaining relationship integrity. Clean the data by standardizing formats, handling missing values, and fixing inconsistencies. Enhance the data by adding calculated fields, creating lookup tables, and optimizing for efficient reporting.
 
-#### Create Optimized & Cleaned Tables
-
-Yes, I understand! You want to combine the key processing steps and activities into a single point for each table (fact or dimension), summarizing the relevant steps. Here's how that can be structured:
+#### 6.1 Create Optimized & Cleaned Tables
 
 1. Campaign Performance Table (Fact Table)
    Key Processing Steps: Validate completeness and metric accuracy, ensure relationship integrity; Clean campaign metrics, handle missing values, and fix inconsistencies; Enhance by adding calculated fields, performance indicators, and optimizing for reporting (e.g., including time dimensions).
@@ -544,8 +531,10 @@ WHERE is_valid_record = TRUE;
 
 <br>
 <br>
+<br>
+<br>
 
-### Data Enhancement: Metrics & KPI Development
+### 7. Data Enhancement: Metrics & KPI Development
 
 Metrics play a crucial role in standardizing analysis, ensuring consistent reporting, and enabling trend analysis. They provide actionable insights that support informed decision-making and drive campaign optimization.
 <br>
@@ -638,7 +627,17 @@ GROUP BY 1,2,3,4,5,6,7,16,17,18,19;
 
 END;
 ```
+<br>
+<br>
+<br>
+<br>
 
-## Analysis & Reporting
+## 8. Analysis & Reporting(Coming Soon)
 
-## Power BI Dashboard(Coming Soon)
+<br>
+<br>
+<br>
+<br>
+
+
+## 9. Power BI Dashboard(Coming Soon)
