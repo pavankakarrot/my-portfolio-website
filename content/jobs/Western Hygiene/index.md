@@ -1,5 +1,5 @@
 ---
-date: '20121-09-14'
+date: '2021-09-14'
 title: 'E-Commerce Specialist'
 company: 'Western Hygiene'
 location: 'Galway, IE'
