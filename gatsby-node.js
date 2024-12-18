@@ -7,7 +7,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark(
+      projects: allMarkdownRemark(
         filter: { 
           fileAbsolutePath: { regex: "/projects/[^/]+/index/i" }
         }
@@ -19,6 +19,29 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               slug
               title
               date
+              category
+              tools
+              tableauUrl
+            }
+            fileAbsolutePath
+          }
+        }
+      }
+      caseStudies: allMarkdownRemark(
+        filter: { 
+          fileAbsolutePath: { regex: "/case-studies/.+/.+/index.md/" }
+        }
+        sort: { fields: [frontmatter___date], order: DESC }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              slug
+              title
+              date
+              category
+              tools
+              tableauUrl
             }
             fileAbsolutePath
           }
@@ -27,6 +50,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `);
 
+  // Rest of your code remains the same
+
   console.log('GraphQL Result:', JSON.stringify(result, null, 2));
 
   if (result.errors) {
@@ -34,33 +59,58 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  // Ensure we have edges to process
-  if (!result.data?.allMarkdownRemark?.edges) {
-    reporter.warn('No markdown files found');
-    return;
+  // Create project pages
+  const projectTemplate = path.resolve(`./src/templates/project.js`);
+  if (result.data?.projects?.edges) {
+    result.data.projects.edges.forEach(({ node }) => {
+      const { slug, title } = node.frontmatter;
+
+      if (!slug) {
+        reporter.warn(`Skipping project page creation for ${node.fileAbsolutePath} - missing slug`);
+        return;
+      }
+
+      console.log(`Creating project page for: ${title || 'Untitled'} (${slug})`);
+      
+      createPage({
+        path: slug,
+        component: projectTemplate,
+        context: {
+          slug: slug,
+        },
+      });
+    });
+  } else {
+    reporter.warn('No project markdown files found');
   }
 
-  // Create pages for each markdown file
-  const projectTemplate = path.resolve(`./src/templates/project.js`);
-  
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const { slug, title } = node.frontmatter;
+  // Create case study pages
+  const caseStudyTemplate = path.resolve(`./src/templates/case-study.js`);
+  if (result.data?.caseStudies?.edges) {
+    result.data.caseStudies.edges.forEach(({ node }) => {
+      const { slug, title } = node.frontmatter;
 
-    if (!slug) {
-      reporter.warn(`Skipping page creation for ${node.fileAbsolutePath} - missing slug`);
-      return;
-    }
+      if (!slug) {
+        reporter.warn(`Skipping case study page creation for ${node.fileAbsolutePath} - missing slug`);
+        return;
+      }
 
-    console.log(`Creating page for: ${title || 'Untitled'} (${slug})`);
-    
-    createPage({
-      path: slug,
-      component: projectTemplate,
-      context: {
-        slug: slug,
-      },
+      // Ensure the path starts with a forward slash
+      const pagePath = slug.startsWith('/') ? slug : `/${slug}`;
+      
+      console.log(`Creating case study page for: ${title || 'Untitled'} (${pagePath})`);
+      
+      createPage({
+        path: pagePath,
+        component: caseStudyTemplate,
+        context: {
+          slug: slug,
+        },
+      });
     });
-  });
+  } else {
+    reporter.warn('No case study markdown files found');
+  }
 
   console.log('Finished creating pages');
 };
@@ -83,6 +133,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       slug: String!
       showInProjects: Boolean
       cta: String
+      category: String
+      tools: [String]
+      tableauUrl: String
     }
   `;
   createTypes(typeDefs);
