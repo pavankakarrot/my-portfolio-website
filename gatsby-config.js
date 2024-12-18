@@ -2,7 +2,7 @@ const config = require('./src/config');
 
 module.exports = {
   siteMetadata: {
-    title: 'Pavan Tummalapenta',
+    title: 'Pavan',
     description:
       'I am a data analyst specializing in transforming complex datasets into actionable insights and creating data-driven experiences.',
     siteUrl: 'https://pavankakarrot.com',
