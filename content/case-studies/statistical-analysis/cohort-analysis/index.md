@@ -1,5 +1,50 @@
+---
+title: 'UK Online Retail Store - Customer Cohort Analysis'
+date: '2024-02-15'
+category: 'statistical'
+slug: 'case-studies/statistical-analysis/cohort-analysis'
+tools:
+  - 'Python'
+  - 'Tableau'
+  - 'SQL'
+tableauUrl: 'https://public.tableau.com/views/Book1_17355657741890/Dashboard1?:showVizHome=no&:embed=true'
+pptUrl: '/presentations/rfm-analysis.pptx'
+---
+
 
 # UK Online Retail Store - Customer Cohort Analysis Case Study
+
+### Table of Contents:
+1. Business Problem/Context
+2. Data Collection & Preparation
+3. Methodology & Implementation
+4. Tableau Visualization Process
+5. Business Insights
+6. Challenges & Learnings
+
+
+<div style="text-align: center; margin: 40px 0;">
+  <a 
+    href="/presentations/rfm-analysis.pptx" 
+    style="
+      display: inline-block;
+      padding: 15px 30px;
+      border: 2px solid var(--green);
+      border-radius: 4px;
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+      background-color: transparent;
+    "
+    onmouseover="this.style.backgroundColor='var(--green-tint)'"
+    onmouseout="this.style.backgroundColor='transparent'"
+  >
+    📊 Download Complete Presentation (PPT)
+  </a>
+</div>
+
 
 ## 1. Business Problem/Context
 The UK-based online retail company specializes in unique all-occasion gifts, with a significant portion of their customer base being wholesalers. The business needs to understand:
