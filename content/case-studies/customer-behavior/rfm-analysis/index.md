@@ -1,5 +1,5 @@
 ---
-title: 'RFM Analysis'
+title: 'Retail Customer Segmentation: RFM Analysis'
 date: '2024-01-15'
 category: 'customer-behavior'
 slug: 'case-studies/customer-behavior/rfm-analysis'
