@@ -8,7 +8,7 @@ tools:
   - 'Tableau'
   - 'SQL'
 tableauUrl: 'https://public.tableau.com/views/Book1_17355657741890/Dashboard1?:showVizHome=no&:embed=true'
-pptUrl: '/presentations/rfm-analysis.pptx'
+pptUrl: '/presentations/cohort-analysis.pptx'
 ---
 
 
@@ -25,7 +25,7 @@ pptUrl: '/presentations/rfm-analysis.pptx'
 
 <div style="text-align: center; margin: 40px 0;">
   <a 
-    href="/presentations/rfm-analysis.pptx" 
+    href="/presentations/cohort-analysis.pptx" 
     style="
       display: inline-block;
       padding: 15px 30px;
