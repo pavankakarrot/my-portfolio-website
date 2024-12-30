@@ -125,7 +125,7 @@ const AnalysisModels = () => {
   // Sample data structure - replace with your actual data
   const models = [
     {
-      title: 'RFM Analysis',
+      title: 'Retail Customer Segmentation: RFM Analysis',
       category: 'customer',
       description: 'Customer segmentation using Recency, Frequency, and Monetary values.',
       tools: ['Python', 'Tableau', 'SQL'],
