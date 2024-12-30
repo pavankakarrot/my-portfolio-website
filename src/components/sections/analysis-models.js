@@ -132,6 +132,14 @@ const AnalysisModels = () => {
       caseStudyUrl: '/case-studies/customer-behavior/rfm-analysis',
       visualizationUrl: 'https://public.tableau.com/app/profile/pavan.kakarrot/viz/Book1_17337693683590/Dashboard1',
     },
+    {
+      title: 'UK Online Retail - Customer Cohort Analysis',
+      category: 'statistical',    // Make sure this matches your category system
+      description: 'Understanding user behavior and retention through time-based cohort analysis',
+      tools: ['Python', 'Tableau', 'SQL'],
+      caseStudyUrl: '/case-studies/statistical-analysis/cohort-analysis',
+      visualizationUrl: 'https://public.tableau.com/views/Book1_17355657741890/Dashboard1',
+    },
     // Add more models here
   ];
 
