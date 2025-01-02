@@ -8,7 +8,7 @@ tools:
   - 'SQL'
   - 'Pandas'
 slug: 'case-studies/business-performance/inventory-analysis'
-tableauUrl: 'https://public.tableau.com/views/Book1_17358323575450/Dashboard1?'
+tableauUrl: 'https://public.tableau.com/views/Book1_17358323575450/Dashboard1?:showVizHome=no&:embed=true'
 ---
 
 # Inventory Analysis: Optimize Your Stock, Maximize Your Profits
