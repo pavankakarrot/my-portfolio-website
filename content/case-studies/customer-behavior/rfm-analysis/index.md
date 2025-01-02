@@ -7,7 +7,7 @@ tools:
   - 'Python'
   - 'Tableau'
   - 'SQL'
-tableauUrl: 'https://public.tableau.com/views/Book1_17337693683590/Dashboard1?:showVizHome=no&:embed=true"'
+tableauUrl: 'https://public.tableau.com/views/Book1_17337693683590/Dashboard1?:showVizHome=no&:embed=true'
 pptUrl: '/presentations/rfm-analysis.pptx'
 ---
 
