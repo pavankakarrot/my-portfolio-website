@@ -140,7 +140,14 @@ const AnalysisModels = () => {
       caseStudyUrl: '/case-studies/statistical-analysis/cohort-analysis',
       visualizationUrl: 'https://public.tableau.com/views/Book1_17355657741890/Dashboard1',
     },
-    // Add more models here
+    {
+      title: 'Inventory Analysis',
+      category: 'business',
+      description: 'A comprehensive view of inventory levels, sales patterns, and stock forecasts. Get recommended stock levels and identify optimal inventory targets to streamline your supply chain management.',
+      tools: ['Python', 'Tableau', 'SQL', 'Pandas'],
+      caseStudyUrl: '/case-studies/business-performance/inventory-analysis',
+      visualizationUrl: 'https://public.tableau.com/views/Book1_17358323575450/Dashboard1',
+    },
   ];
 
   const filteredModels = activeCategory === 'all' 
