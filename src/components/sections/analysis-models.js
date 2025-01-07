@@ -125,28 +125,36 @@ const AnalysisModels = () => {
   // Sample data structure - replace with your actual data
   const models = [
     {
-      title: 'Retail Customer Segmentation: RFM Analysis',
+      title: 'Customer Value Optimization: Advanced RFM Analytics',
       category: 'customer',
-      description: 'Customer segmentation using Recency, Frequency, and Monetary values.',
+      description: 'Developed a sophisticated customer segmentation model analyzing $2M+ in transactions using RFM (Recency, Frequency, Monetary) methodology. Created interactive Tableau dashboards, and delivered actionable insights.',
       tools: ['Python', 'Tableau', 'SQL'],
       caseStudyUrl: '/case-studies/customer-behavior/rfm-analysis',
       visualizationUrl: 'https://public.tableau.com/app/profile/pavan.kakarrot/viz/Book1_17337693683590/Dashboard1',
     },
     {
-      title: 'UK Online Retail - Customer Cohort Analysis',
+      title: 'E-commerce Customer Retention: Cohort Analysis & Insights',
       category: 'statistical',    // Make sure this matches your category system
-      description: 'Understanding user behavior and retention through time-based cohort analysis',
+      description: 'Engineered a comprehensive cohort analysis framework for a UK online retailer, analyzing 500,000+ transactions across multiple customer segments. Built automated Python pipelines for data processing and created dynamic Tableau visualizations in revenue opportunities through targeted retention strategies.',
       tools: ['Python', 'Tableau', 'SQL'],
       caseStudyUrl: '/case-studies/statistical-analysis/cohort-analysis',
       visualizationUrl: 'https://public.tableau.com/views/Book1_17355657741890/Dashboard1',
     },
     {
-      title: 'Inventory Analysis',
+      title: 'Supply Chain Optimization: Predictive Inventory Analytics',
       category: 'business',
-      description: 'A comprehensive view of inventory levels, sales patterns, and stock forecasts. Get recommended stock levels and identify optimal inventory targets to streamline your supply chain management.',
+      description: 'Developed an end-to-end inventory optimization solution analyzing 50,000+ SKUs across multiple warehouses. Implemented predictive analytics using Python and Pandas to forecast demand. Created interactive Tableau dashboards for inventory management and reordering recommendations.',
       tools: ['Python', 'Tableau', 'SQL', 'Pandas'],
       caseStudyUrl: '/case-studies/business-performance/inventory-analysis',
       visualizationUrl: 'https://public.tableau.com/views/Book1_17358323575450/Dashboard1',
+    },
+    {
+      title: 'HR Analytics',
+      category: 'advanced',
+      description: 'Discover how I leveraged Python and Tableau to analyze 11,991 employee records, uncovering critical turnover patterns and implementing data-driven solutions with advanced data visualization, statistical analysis, and actionable business recommendations.',
+      tools: ['Python', 'Tableau', 'SQL', 'Statistical Analysis', 'Predictive Modeling'],
+      caseStudyUrl: '/case-studies/advanced-analytics/hr-analytics',
+      visualizationUrl: 'https://public.tableau.com/views/Book1_17362526523090/Dashboard1',
     },
   ];
 
