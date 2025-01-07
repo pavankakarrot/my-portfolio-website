@@ -1,4 +1,41 @@
+---
+title: 'HR Analytics: Data-Driven Employee Retention Strategy'
+date: '2024-01-15'
+category: 'advanced'
+tools:
+  - 'Python'
+  - 'Tableau'
+  - 'SQL'
+  - 'Statistical Analysis'
+  - 'Predictive Modeling'
+slug: 'case-studies/advanced-analytics/hr-analytics'
+tableauUrl: 'https://public.tableau.com/views/Book1_17362526523090/Dashboard1?:showVizHome=no&:embed=true'
+---
+
+
 # HR Analytics: Employee Retention Analysis
+
+<div style="text-align: center; margin: 40px 0;">
+  <a 
+    href="/presentations/hr-analytics.pptx" 
+    style="
+      display: inline-block;
+      padding: 15px 30px;
+      border: 2px solid var(--green);
+      border-radius: 4px;
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+      background-color: transparent;
+    "
+    onmouseover="this.style.backgroundColor='var(--green-tint)'"
+    onmouseout="this.style.backgroundColor='transparent'"
+  >
+    📊 Download Complete Presentation (PPT)
+  </a>
+</div>
 
 ### 1. Business Problem/Context
 - **Company**: Salifort Motors
